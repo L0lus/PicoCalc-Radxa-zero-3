@@ -1,0 +1,53 @@
+/dts-v1/;
+/plugin/;
+
+// SPI3_MOSI_M1	GPIO4_C3
+// SPI3_MISO_M1	GPIO4_C5
+// SPI3_CLK_M1	GPIO4_C2
+// SPI3_CS0_M1  GPIO4_C6
+
+&spi3 {
+        status = "okay";
+        #address-cells = <1>;
+        #size-cells = <0>;
+        pinctrl-names = "default";
+        pinctrl-0 = <&spi3m1_cs0 &spi3m1_pins>; 
+        max-freq = <50000000>;
+        fbili9341:ili9341@0 {
+                compatible = "fbtft,ili9341";
+                reg = <0>;
+                spi-max-frequency = <50000000>;
+                rotate = <0>;
+                bgr;
+                fps = <30>;
+                buswidth = <8>;
+                regwidth = <8>;
+                height = <320>;
+                width = <320>;
+                reset-gpios = <&gpio3 17 1>; // GPIO3_C1 active low
+                dc-gpios = <&gpio3 10 0>; // GPIO3_B2
+                debug = <0>;
+                init = <
+                        0x10000b0 0x00 //interface mode control
+                        0x1000011 //sleep out command
+                        0x20000ff //delay of 255
+                        0x100003a 0x55 //pixel format. DBI=DPI=16bits per pixel (from ili9341 init)
+                        0x10000F7 0xA9 0x51 0x2C 0x82 //adjust control 3
+                        0x10000C0 0x11 0x09 //power control 1
+                        0x10000C1 0x41 //power control 2
+                        0x10000C5 0x00 0x0A 0x80 //voltage common control
+                        0x10000B1 0xB0 0x11 //frame rate control
+                        0x10000B4 0x02 //display inversion control
+                        0x10000B6 0x02 0x02 //display function control (2nd param SS shift direction was 0x22 from arduino code)
+                        0x10000B7 0xC6 //entry mode set
+                        0x10000BE 0x00 0x04 //HS lanes control
+                        0x10000E9 0x00 //set image function
+                        0x1000036 0x08 //memory access control
+                        0x1000021 // invert colors
+                        0x10000E0 0x00 0x07 0x10 0x09 0x17 0x0B 0x41 0x89 0x4B 0x0A 0x0C 0x0E 0x18 0x1B 0x0F //PGAMCTR positive gamma control
+                        0x10000E1 0x00 0x17 0x1A 0x04 0x0E 0x06 0x2F 0x45 0x43 0x02 0x0A 0x09 0x32 0x36 0x0F //NGAMCTRL negative gamma control
+                        0x1000011 //sleep out command
+                        0x1000029>; //display on
+          };
+
+};
