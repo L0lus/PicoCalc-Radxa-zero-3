@@ -1,0 +1,38 @@
+/dts-v1/;
+/plugin/;
+
+// SPI3_MOSI_M1	GPIO4_C3
+// SPI3_MISO_M1	GPIO4_C5
+// SPI3_CLK_M1	GPIO4_C2
+// SPI3_CS0_M1  GPIO4_C6
+
+&spi3 {
+    #address-cells = <1>;
+    #size-cells = <0>;
+    status = "okay";
+    pinctrl-names = "default";
+    pinctrl-0 = <&spi3m1_pins &spi3m1_cs0>;
+    panel: panel@0 {
+        compatible = "picolcd", "panel-mipi-dbi-spi";
+        reg = <0>;
+        spi-max-frequency = <70000000>;
+        width-mm = <43>;
+        height-mm = <43>;
+        reset-gpios = <&gpio3 17 0>; // GPIO3_C1
+        dc-gpios = <&gpio3 10 0>;    // GPIO3_B2
+        debug = <3>;
+        write-only;
+
+        panel-timing {
+            hactive = <320>;
+            vactive = <320>;
+            hback-porch = <0>;
+            vback-porch = <0>;
+            clock-frequency = <50>; // I dont think this does anything, nothin` changes when it it s 0 nor when it is 70000000
+            hfront-porch = <0>;
+            hsync-len = <0>;
+            vfront-porch = <0>;
+            vsync-len = <0>;
+        };
+    };
+};
