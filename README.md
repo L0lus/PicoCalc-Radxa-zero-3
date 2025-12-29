@@ -1,4 +1,4 @@
-# WIP, should work but i am yet to create a fresh SD and test it
+# WIP, should work but I am yet to create a fresh SD and test it
 
 ## Guide for Setup Radxa zero 3 on Picocalc 
 
@@ -111,3 +111,8 @@ you need to run this command everytime you change ```picolcd.bin``` in ```/lib/f
 * GPIO audio
 * connect secondary SDcard via gpio 
 * make panel-mipi-dbi-spi to full work, from what I understand it would provide gpu acceleration and make things go much faster
+* 
+
+# credits
+
+this repo is based on https://github.com/wasdwasd0105/picocalc-pi-zero-2
