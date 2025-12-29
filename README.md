@@ -3,8 +3,8 @@
 ## Guide for Setup Radxa zero 3 on Picocalc 
 
 #### Tips
-1. You can change UI size on Preference → Appearance Settings → Defaults
-2. The Pico Connectors on clockwork_Mainboard_V2.0_Schematic are Left-Right flipped!
+
+The Pico Connectors on clockwork_Mainboard_V2.0_Schematic are Left-Right flipped!
 
 #### Set up wire connection 
 
@@ -111,7 +111,7 @@ you need to run this command everytime you change ```picolcd.bin``` in ```/lib/f
 * GPIO audio
 * connect secondary SDcard via gpio 
 * make panel-mipi-dbi-spi to full work, from what I understand it would provide gpu acceleration and make things go much faster
-* 
+* add my i3 cconfig/create setup script, here or in a next repo
 
 # credits
 
