@@ -2,13 +2,16 @@
 /plugin/;
 
 / {
-    compatible = "brcm,bcm2835";
+    compatible = "radxa,zero3", "radxa,zero-3w", "rockchip,rk3566";
 
     fragment@0 {
-        target = <&i2c1>;  // Use hardware I2C-1 (SDA=GPIO2, SCL=GPIO3)
+        target = <&i2c4>;
         __overlay__ {
             #address-cells = <1>;
             #size-cells = <0>;
+            pinctrl-0 = <&i2c4m0_xfer>;
+            pinctrl-names = "default";
+            status = "okay";
 
             picocalckbd@1f {
                 compatible = "picocalc_kbd";
@@ -17,3 +20,4 @@
         };
     };
 };
+
