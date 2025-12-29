@@ -1,4 +1,5 @@
-## Guide for Setup Pi Zero 2 on Picocalc
+# THIS IS A WORK IN PROGRESS, NO FILES CHANDGED YET,DOES NOT WORK YET
+## Guide for Setup Radxa zero 3 on Picocalc 
 
 #### Tips
 1. You can change UI size on Preference → Appearance Settings → Defaults
