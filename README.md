@@ -31,7 +31,7 @@ Connector Schematic on clockwork_Mainboard_V2.0_Schematic. **Please note it is L
 
 I started with armbian lite (trixie). If you will chose to use armbian desktop image you can use the mipi driver, it works for some reason with gnome, you will se some artefacts when booting though
 
-[https://www.armbian.com/radxa-zero-3/#:~:text=Size-,Debian%2013%20(Trixie),-Minimal%20/%20IOT](https://www.armbian.com/radxa-zero-3/)
+[https://www.armbian.com/radxa-zero-3/](https://www.armbian.com/radxa-zero-3/)
 
 
 
