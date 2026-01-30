@@ -5,6 +5,8 @@
 
 The Pico Connectors on clockwork_Mainboard_V2.0_Schematic are Left-Right flipped!
 
+you can use the mipi driver when using gnome desktop image of armbian - I did not test other desktops
+
 #### Set up wire connection 
 
 Connect your PicoCalc to the Radxa zero 3:
@@ -29,7 +31,7 @@ Connector Schematic on clockwork_Mainboard_V2.0_Schematic. **Please note it is L
 
 #### Install the correct OS 
 
-I started with armbian lite (trixie). If you will chose to use armbian desktop image you can use the mipi driver, it works for some reason with gnome, you will se some artefacts when booting though
+I started with armbian lite (trixie). If you will chose to use armbian desktop image you can use the mipi driver, it works for some reason with gnome, you will see some artefacts when booting though
 
 [https://www.armbian.com/radxa-zero-3/](https://www.armbian.com/radxa-zero-3/)
 
@@ -51,7 +53,7 @@ cd ./picocalc-pi-zero-2
 chmod +x ./setup_picocalc.sh
 sudo ./setup_picocalc.sh
 ```
-Wait for some time, it will reboot after installed
+Wait for some time, it will reboot after installation
 
 
 #### panel-mipi-dbi-spi
@@ -107,8 +109,8 @@ you need to run this command everytime you change ```picolcd.bin``` in ```/lib/f
 
 ## WIP features
 
-* GPIO audio
-* connect secondary SDcard via gpio 
+* GPIO audio - will need i2s amp
+* connect secondary SDcard via gpio - would need bitbanged SPI to make it work I think 
 * make panel-mipi-dbi-spi to fully work, from what I understand it would provide gpu acceleration and make things go much faster
 * add my i3 cconfig/create setup script, here or in a next repo
 
