@@ -1,4 +1,3 @@
-# WIP, should work but I am yet to create a fresh SD and test it
 
 ## Guide for Setup Radxa zero 3 on Picocalc 
 
@@ -30,9 +29,9 @@ Connector Schematic on clockwork_Mainboard_V2.0_Schematic. **Please note it is L
 
 #### Install the correct OS 
 
-I started with armbian lite (trixie), although desktop image should also work
+I started with armbian lite (trixie). If you will chose to use armbian desktop image you can use the mipi driver, it works for some reason with gnome, you will se some artefacts when booting though
 
-https://www.armbian.com/radxa-zero-3/#:~:text=Size-,Debian%2013%20(Trixie),-Minimal%20/%20IOT
+[https://www.armbian.com/radxa-zero-3/#:~:text=Size-,Debian%2013%20(Trixie),-Minimal%20/%20IOT](https://www.armbian.com/radxa-zero-3/)
 
 
 
@@ -96,7 +95,7 @@ esac
 # Begin real processing below this line
 copy_exec /lib/firmware/picolcd.bin
 ```
-then you need to maxe it executable and update initramfs
+then you need to make it executable and update initramfs
 
 ```bash 
 sudo chmod +x /etc/initramfs-tools/hooks/include-picolcd-bin.sh
@@ -110,7 +109,7 @@ you need to run this command everytime you change ```picolcd.bin``` in ```/lib/f
 
 * GPIO audio
 * connect secondary SDcard via gpio 
-* make panel-mipi-dbi-spi to full work, from what I understand it would provide gpu acceleration and make things go much faster
+* make panel-mipi-dbi-spi to fully work, from what I understand it would provide gpu acceleration and make things go much faster
 * add my i3 cconfig/create setup script, here or in a next repo
 
 # credits
