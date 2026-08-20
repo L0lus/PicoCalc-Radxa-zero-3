@@ -49,7 +49,7 @@ git clone https://github.com/L0lus/PicoCalc-Radxa-zero-3.git
 #### setup picocalc
 
 ```bash
-cd ./picocalc-pi-zero-2
+cd ./PicoCalc-Radxa-zero-3
 chmod +x ./setup_picocalc.sh
 sudo ./setup_picocalc.sh
 ```
