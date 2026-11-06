@@ -65,7 +65,8 @@ if you wish to continue troubleshooting
 you can compile the dts 
 
 ```bash 
-sudo armbian-add-overlay /path/to/file.dts```
+sudo armbian-add-overlay /path/to/file.dts
+```
 
 then you need to copy preprepared ```picolcd.bin``` file to ```/lib/firmware/```
 
@@ -74,8 +75,7 @@ more info can be found here
 https://github.com/notro/panel-mipi-dbi/wiki#:~:text=Use%20mipi%2Ddbi%2Dcmd%20to%20convert%20and%20then%20copy
 
 you also need to create a hook as this needs to get in to the initrd
-create a file in ```/etc/initramfs-tools/hooks/
-```
+create a file in ```/etc/initramfs-tools/hooks/```
 
 ```bash
 sudo nano /etc/initramfs-tools/hooks/include-picolcd-bin.sh
